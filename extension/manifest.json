@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "BUFS Planner Connector",
+  "version": "1.0.0",
+  "description": "Lets BUFS Planner read your own video progress from BUFS Canvas. Everything stays on your computer.",
+  "permissions": ["tabs", "scripting"],
+  "host_permissions": ["https://canvas.bufs.ac.kr/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [{ "matches": ["http://localhost:3211/*", "http://127.0.0.1:3211/*"], "js": ["bridge.js"], "run_at": "document_start" }]
+}
